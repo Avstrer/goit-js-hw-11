@@ -9,7 +9,10 @@ export function getImage(query) {
   });
   const url = `${base_url}?${parameters}`;
 
-  return fetch(url).then(res => {
-    return res.json();
-  });
+  return fetch(url)
+    .then(res => {
+      const response = res.json();
+      return response;
+    })
+    .catch(err => console.log(err));
 }
